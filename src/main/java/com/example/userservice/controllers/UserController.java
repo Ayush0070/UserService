@@ -38,7 +38,7 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PostMapping("/validate/{token}")
+    @GetMapping("/validate/{token}")
     public UserDto validateToken(@PathVariable String token){
         User user = userService.validateToken(token);
         return UserDto.from(user);
